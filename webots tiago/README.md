@@ -1,1 +1,1 @@
-## Code for getting a Tiago robot inside webots to grab a jar and place it on a table behind it, inside webots.I used Blackboards, state machines, object oriented programming, and algorithms.
+## Code for getting a Tiago robot inside webots to grab a jar and place it on a table behind it. I used Blackboards, state machines, object oriented programming, and algorithms.
