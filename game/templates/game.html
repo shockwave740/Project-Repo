@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adventure Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+</head>
+<body class="game-page">
+    <!-- Header with nav -->
+    <header>
+        <h1>Space Adventurer</h1>
+        <div class="nav-buttons">
+            <a href="/" class="nav-btn">Home</a>
+            <a href="/about" class="nav-btn">About</a>
+        </div>
+    </header>
+
+    <!-- Main game content -->
+    <main>
+        <p>{{ node.text }}</p>
+
+    {% if node.choices %}
+<ul>
+
+    {% for choice in node.choices %}
+        {% if choice.target == "checkpoint_win" %}
+            <li><a class="nav-btn" href="{{ url_for('won') }}">✦ {{ choice.text }}</a></li>
+        {% else %}
+            <li><a class="nav-btn" href="{{ url_for('show_node', node_id=choice.target) }}">✦ {{ choice.text }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+    {% else %}
+        {% if node.type == "win" %}
+            <a href="{{ url_for('won') }}" class="nav-btn">Continue to Win Page</a>
+        {% elif node.type == "lose" %}
+            <a href="{{ url_for('lost') }}" class="nav-btn">Continue to Lost Page</a>
+        {% else %}
+            <p><strong>The End.</strong></p>
+        {% endif %}
+    {% endif %}
+<a href="{{ url_for('show_node', node_id='checkpoint_0') }}" class="nav-btn">Restart Game</a>
+    </main>
+</body>
+</html>
