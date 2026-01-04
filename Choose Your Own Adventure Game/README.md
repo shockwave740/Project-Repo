@@ -3,6 +3,7 @@ This repository contains the term project for Team #1 in CSPB 3308 – Software 
 
 
 # Project Title: Choose Your Own Adventure
+Click here to play the game: https://cspb3308-term-project-team1.onrender.com/ 
 
 ## Team #1 – CSPB3308 Term Project
 
